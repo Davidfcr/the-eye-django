@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+
+class Event(models.Model):
+    category = models.CharField(max_length=50, blank=False)
+    name = models.CharField(max_length=50, blank=False)
+    timestamp = models.DateTimeField(auto_now_add=True, blank=True)
+    data = models.TextField()
+
+    def __str__(self):
+        return self.name
