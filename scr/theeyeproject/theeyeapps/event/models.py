@@ -2,10 +2,14 @@ from django.db import models
 
 
 class Event(models.Model):
-    category = models.CharField(max_length=50, blank=False)
-    name = models.CharField(max_length=50, blank=False)
-    timestamp = models.DateTimeField(auto_now_add=True, blank=True)
-    data = models.TextField()
+    session_id = models.CharField(max_length=70, blank=False, default=None)
+    category = models.CharField(max_length=100, blank=False)
+    name = models.CharField(max_length=100, blank=False)
+    timestamp = models.DateTimeField(auto_now_add=True, blank=False)
+    data = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'event'
 
     def __str__(self):
         return self.name
