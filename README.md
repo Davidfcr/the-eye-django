@@ -22,7 +22,7 @@ created with value 'ttmmm9xl3uix8fs76kl19uhxhfnikhwm'
 
 Example for a POST request:
 
-curl --location --request POST 'http://127.0.0.1:8000/api/event/' \
+curl --location --request POST 'http://0.0.0.0:8000/api/event/' \
 --header 'ApplicationId: 100' \
 --header 'Content-Type: application/json' \
 --data-raw '{
