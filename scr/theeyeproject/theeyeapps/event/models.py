@@ -1,4 +1,5 @@
 from django.db import models
+from jsonfield import JSONField
 
 
 class Event(models.Model):
@@ -6,7 +7,7 @@ class Event(models.Model):
     category = models.CharField(max_length=100, blank=False)
     name = models.CharField(max_length=100, blank=False)
     timestamp = models.DateTimeField(auto_now_add=True, blank=False)
-    data = models.TextField(blank=True)
+    data = JSONField(blank=False, default="")
 
     class Meta:
         verbose_name = 'event'
